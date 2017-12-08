@@ -27,8 +27,8 @@ export const Property = ({
 			<p className={styles.address || "address"}>{addr}</p>
 			<div>
 				<span>{euros(price)}</span>
-				<span>{rooms}</span>
-				<span>{size}</span>
+				<span>{rooms} Zimmer</span>
+				<span>ab {size} m²</span>
 			</div>
 		</div>
 	</div>
