@@ -1,6 +1,13 @@
 import React from "react" // required to define components
 import styles from "components/Property.css"
 
+// Making some pretty glaring assumptions here
+const euros = n => n.toLocaleString('de-DE', {
+	style: "currency",
+	currency: "EUR",
+	minimumFractionDigits: 0
+})
+
 export const Property = ({
 			photo,
 			action,
@@ -17,9 +24,9 @@ export const Property = ({
 		</div>
 		<div>
 			<p>{desc}</p>
-			<div>{addr}</div>
+			<p className={styles.address || "address"}>{addr}</p>
 			<div>
-				<span>{price}</span>
+				<span>{euros(price)}</span>
 				<span>{rooms}</span>
 				<span>{size}</span>
 			</div>

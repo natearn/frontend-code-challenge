@@ -1,6 +1,11 @@
 
+.property {
+	font-family: sans-serif;
+}
+
 .property > :first-child {
 	position: relative;
+	display: flex; /* TODO: diagnose phantom whitespace */
 }
 
 .property > :first-child > img {
@@ -11,4 +16,30 @@
 	position: absolute;
 	top: 10px;
 	left: 10px;
+}
+
+.property > :last-child {
+	margin: 0;
+	padding: 20px;
+	border: solid 1px gray;
+}
+
+.property p {
+	margin: 0 0 1em 0;
+}
+
+.property p.address {
+	font-size: small;
+	color: grey;
+	font-weight: bold;
+}
+
+.property > :last-child > div:last-child {
+	display: flex;
+	justify-content: space-between;
+}
+
+.property > :last-child > div:last-child > span:last-child {
+	padding-left: 2em;
+	border-left: solid 1px gray;
 }
