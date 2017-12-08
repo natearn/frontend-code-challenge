@@ -1,5 +1,6 @@
 import { render } from "react-dom"
-import { App } from "components/App.jsx"
+import { App } from "components/App"
+import { fetchProps } from "api"
 
 let dummyData = {
 	ads: [1,2,3,4,5].map((_,idx) =>
@@ -18,7 +19,11 @@ let dummyData = {
 	)
 }
 
-render(
-	App(dummyData),
-	document.getElementById("app")
-)
+fetchProps()
+	.catch(error => console.log(error))
+	.then(props =>
+		render(
+			App(props || dummyData),
+			document.getElementById("app")
+		)
+	)
