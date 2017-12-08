@@ -1,0 +1,13 @@
+
+ul.app {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+}
+
+.app li {
+	list-style: none;
+	width: 400px;
+	margin: 20px
+}
