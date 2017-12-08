@@ -1,4 +1,5 @@
 import React from "react" // required to define components
+import styles from "components/Property.css"
 
 export const Property = ({
 			photo,
@@ -9,7 +10,7 @@ export const Property = ({
 			rooms,
 			size,
 }) => (
-	<div>
+	<div className={styles.property || "property"}>
 		<div>
 			<img src={photo} />
 			<button>{action}</button>

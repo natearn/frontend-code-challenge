@@ -8,7 +8,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js','.jsx'],
-    modules: [path.resolve(__dirname, 'src'),'node_modules']
+    modules: [path.resolve(__dirname, 'src'),'node_modules'],
   },
   module: {
     rules: [
@@ -19,7 +19,16 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              camelCase: true
+            },
+          },
+        ],
       },
     ],
   },
