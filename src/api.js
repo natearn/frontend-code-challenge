@@ -27,36 +27,35 @@ export const fetchJSON = () => {
 
 // transform a successful response json into something that is easier to
 // consume by the application (such as the App props object)
-// TODO: make this less painful to read
-// TODO: get the reselect library for this!
+// TODO: Make this more robust and maintainable!
 export const simplify = json => ({
-	ads: json.data.map(ad => ({
+	ads: json.data.map(ad => {
 
-		photo: ad.advertisementAssets
-			     .find({titlePicture: true})
-			     .advertisementThumbnails
-			     .inventory_m
-			     .url,
+		const title = Object.values(ad.advertisementAssets)
+			.find(({titlePicture}) => titlePicture)
+		console.log(title)
+		const photo = title && title
+			.advertisementThumbnails
+			.inventory_m
+			.url
 
-		action: ad.advertisementPrice.baseRent ? "Mieten" : "Kaufen",
-
-		desc: ad.title,
-
-		addr: ad.realestateSummary.address.postalCode
-			    + " "
-			    + ad.realestateSummary.address.city,
-
-		price: ad.advertisementPrice.sellPrice,
-
-		rooms: ad.realestateSummary.numberOfRooms,
-
-		size: ad.realestateSummary.space
-
-	}))
+		return {
+			id: ad._id.$id,
+			photo: photo,
+			action: ad.advertisementPrice.baseRent ? "Mieten" : "Kaufen",
+			desc: ad.title,
+			addr: ad.realestateSummary.address.postalCode
+				+ " "
+				+ ad.realestateSummary.address.city,
+			price: ad.advertisementPrice.sellPrice,
+			rooms: ad.realestateSummary.numberOfRooms,
+			size: ad.realestateSummary.space,
+		}
+	})
 })
 
 // let's mock the api so I don't have to deal with the proxy server for now
 import response from "../sample.json"
 const mockJSON = () => new Promise((resolve,reject) => resolve(response))
 
-export const fetchProps = () => mockJSON().then(x => console.log(x) || x).then(simplify)
+export const fetchProps = () => mockJSON().then(simplify)
