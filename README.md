@@ -1,3 +1,22 @@
+# My solution
+
+## Notes
+
+- I'm not using a state manager, because this app has no state!
+- Look at the commit log for development details.
+- There are many things that "application flow" could mean. Just google it, you'll see what I mean.
+- I was having issues with the dev server, so I scrapped it in order to be more productive.
+- I'm not using a css preprocessor because css modules make them much less necessary.
+- Lately I've been doing all of my dev work in docker containers.
+
+## Usage
+
+If you've got docker, you can just build and run the image however you wish. I use the `start.sh` script for development.
+
+Otherwise:
+
+`npm install` then `npm run webpack` to generate the bundle.
+
 # Front-End Interview Test
 
 This is a simple front-end code challenge created to serve two purposes:
