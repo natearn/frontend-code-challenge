@@ -55,4 +55,8 @@ export const simplify = json => ({
 	}))
 })
 
-export const fetchProps = () => fetchJSON().then(simplify)
+// let's mock the api so I don't have to deal with the proxy server for now
+import response from "../sample.json"
+const mockJSON = () => new Promise((resolve,reject) => resolve(response))
+
+export const fetchProps = () => mockJSON().then(x => console.log(x) || x).then(simplify)
