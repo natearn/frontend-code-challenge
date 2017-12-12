@@ -21,6 +21,7 @@ let dummyData = {
 
 fetchProps()
 	.catch(error => console.log(error))
+	.then(({ads}) => ({ads: ads.slice(0,10)}))
 	.then(props =>
 		render(
 			App(props || dummyData),
