@@ -33,7 +33,6 @@ export const simplify = json => ({
 
 		const title = Object.values(ad.advertisementAssets)
 			.find(({titlePicture}) => titlePicture)
-		console.log(title)
 		const photo = title && title
 			.advertisementThumbnails
 			.inventory_m
