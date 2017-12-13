@@ -4,14 +4,15 @@
 // get the ads as a Promise
 export const fetchJSON = () => {
 
-	let url = new URL("https://api.mcmakler.de/v1/advertisements")
+	let url = new URL("http://localhost:9090/api.mcmakler.de/v1/advertisements")
 	let headers = new Headers()
 	headers.append("Accept","application/json")
+	headers.append("X-Requested-From","cors-proxy-server")
 
 	const context = {
 		method: 'GET',
 		headers: headers,
-		mode: 'no-cors',
+		mode: 'cors',
 		cache: 'default'
 	}
 
@@ -53,8 +54,4 @@ export const simplify = json => ({
 	})
 })
 
-// let's mock the api so I don't have to deal with the proxy server for now
-import response from "../sample.json"
-const mockJSON = () => new Promise((resolve,reject) => resolve(response))
-
-export const fetchProps = () => mockJSON().then(simplify)
+export const fetchProps = () => fetchJSON().then(simplify)
