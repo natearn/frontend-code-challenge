@@ -1,16 +1,16 @@
 
+/* layout */
+
 .property {
-	font-family: sans-serif;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
-.property > :first-child {
-	position: relative;
-	display: flex; /* TODO: diagnose phantom whitespace */
+.property > * {
+	flex: 1;
 }
 
-.property > :first-child > img {
-	max-width: 100%;
-}
 
 .property > :first-child > button {
 	position: absolute;
@@ -18,28 +18,24 @@
 	left: 10px;
 }
 
-.property > :last-child {
-	margin: 0;
-	padding: 20px;
-	border: solid 1px gray;
+.property > :first-child {
+	position: relative;
 }
 
-.property p {
-	margin: 0 0 1em 0;
+.property > :first-child > img {
+	display: block;
+	max-width: 100%;
+	height: 100%;
 }
 
-.property p.address {
-	font-size: small;
-	color: grey;
-	font-weight: bold;
-}
-
-.property > :last-child > div:last-child {
+.property > :last-child > :last-child {
 	display: flex;
 	justify-content: space-between;
 }
 
-.property > :last-child > div:last-child > span:last-child {
-	padding-left: 2em;
-	border-left: solid 1px gray;
+/* appearance */
+
+.property > :last-child {
+	border: 1px solid lightgrey;
+	padding: 20px;
 }
