@@ -26,13 +26,13 @@ export const Property = ({
 		<div>
 			{/* alt='' is a hack to make failed images display at the correct size */}
 			<img alt='' src={photo} />
-			<button className={styles.button}>{action}</button>
+			<button>{action}</button>
 		</div>
 		<div>
 			<p>{desc}</p>
 			<p className={styles.address || "address"}>{addr}</p>
-			<div>
-				<span>{euros(price)}</span>
+			<div className={styles.stats}>
+				<span className={styles.price}>{euros(price)}</span>
 				<span>{rooms} Zimmer</span>
 				<span>ab {whole(size)} m²</span>
 			</div>

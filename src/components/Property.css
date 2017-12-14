@@ -1,4 +1,6 @@
 
+/* top-level layout */
+
 .property {
 	height: 100%;
 	display: flex;
@@ -7,6 +9,15 @@
 
 .property > :first-child {
 	flex: 1 0 50%;
+}
+
+.property > :last-child {
+	flex: 0 1 50%;
+}
+
+/* property image and action button (the first child) */
+
+.property > :first-child {
 	position: relative;
 }
 
@@ -16,7 +27,13 @@
 	left: 10px;
 }
 
-.button {
+.property > :first-child > img {
+	display: block;
+	max-width: 100%;
+	height: 100%;
+}
+
+.property button {
 	padding: 0.2em 0.5em;
 	font-weight: bold;
 	color: grey;
@@ -26,18 +43,11 @@
 	background-color: #e3e3e3;
 }
 
-.property > :first-child > img {
-	display: block;
-	max-width: 100%;
-	height: 100%;
-}
+/* property details (the second and last child) */
 
 .property > :last-child {
-	flex: 0 1 50%;
-
 	display: flex;
 	flex-direction: column;
-
 	border: 1px solid lightgrey;
 	padding: 20px;
 }
@@ -46,30 +56,34 @@
 	margin-top: 0;
 }
 
-.property > :last-child > :nth-child(2) {
+.property > :last-child > .address {
 	flex: 1;
 	font-size: small;
 	color: grey;
 }
 
-.property > :last-child > :last-child {
+/* the numerical details of the property */
+
+.property .stats {
 	display: flex;
 }
 
-.property > :last-child > :last-child > * {
-	white-space: nowrap;
-}
-
-.property > :last-child > :last-child > :first-child {
-	flex: 2;
-	font-weight: bold;
-}
-
-.property > :last-child > :last-child > :not(:first-child) {
+.property .stats > * {
 	flex: 1;
+	white-space: nowrap;
 	padding: 0 0.5em;
 }
 
-.property > :last-child > :last-child > :last-child {
+.property .stats > :first-child {
+	flex: 2;
+	padding-left: 0;
+}
+
+.property .stats > :last-child {
 	border-left: 1px solid grey;
+	padding-right: 0;
+}
+
+.property .stats .price {
+	font-weight: bold;
 }
