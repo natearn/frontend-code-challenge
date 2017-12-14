@@ -46,5 +46,22 @@
 
 .property > :last-child > :last-child {
 	display: flex;
-	justify-content: space-between;
+}
+
+.property > :last-child > :last-child > * {
+	white-space: nowrap;
+}
+
+.property > :last-child > :last-child > :first-child {
+	flex: 2;
+	font-weight: bold;
+}
+
+.property > :last-child > :last-child > :not(:first-child) {
+	flex: 1;
+	padding: 0 0.5em;
+}
+
+.property > :last-child > :last-child > :last-child {
+	border-left: 1px solid grey;
 }
