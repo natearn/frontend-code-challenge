@@ -8,6 +8,11 @@ const euros = n => n.toLocaleString('de-DE', {
 	minimumFractionDigits: 0
 })
 
+const whole = n => n.toLocaleString('de-DE', {
+	style: "decimal",
+	maximumFractionDigits: 0
+})
+
 export const Property = ({
 			photo,
 			action,
@@ -29,7 +34,7 @@ export const Property = ({
 			<div>
 				<span>{euros(price)}</span>
 				<span>{rooms} Zimmer</span>
-				<span>ab {size} m²</span>
+				<span>ab {whole(size)} m²</span>
 			</div>
 		</div>
 	</div>
