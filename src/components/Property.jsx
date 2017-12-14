@@ -26,7 +26,7 @@ export const Property = ({
 		<div>
 			{/* alt='' is a hack to make failed images display at the correct size */}
 			<img alt='' src={photo} />
-			<button>{action}</button>
+			<button className={styles.button}>{action}</button>
 		</div>
 		<div>
 			<p>{desc}</p>
