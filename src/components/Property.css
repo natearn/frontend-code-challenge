@@ -11,15 +11,14 @@
 	flex: 1;
 }
 
+.property > :first-child {
+	position: relative;
+}
 
 .property > :first-child > button {
 	position: absolute;
 	top: 10px;
 	left: 10px;
-}
-
-.property > :first-child {
-	position: relative;
 }
 
 .property > :first-child > img {
