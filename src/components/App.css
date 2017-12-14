@@ -6,13 +6,14 @@
 ul.app {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-around;
 	margin: 0;
 	padding: 0;
 }
 
 .app li {
 	list-style: none;
-	width: 320px;
+	width: 340px;
 	height: 400px;
 	margin: 20px;
 }
