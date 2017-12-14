@@ -7,11 +7,8 @@
 	flex-direction: column;
 }
 
-.property > * {
-	flex: 1;
-}
-
 .property > :first-child {
+	flex: 1 0 50%;
 	position: relative;
 }
 
@@ -27,14 +24,25 @@
 	height: 100%;
 }
 
+.property > :last-child {
+	flex: 0 1 50%;
+
+	display: flex;
+	flex-direction: column;
+
+	border: 1px solid lightgrey;
+	padding: 20px;
+}
+
+.property > :last-child > * {
+	margin-top: 0;
+}
+
+.property > :last-child > :first-child {
+	flex: 1;
+}
+
 .property > :last-child > :last-child {
 	display: flex;
 	justify-content: space-between;
-}
-
-/* appearance */
-
-.property > :last-child {
-	border: 1px solid lightgrey;
-	padding: 20px;
 }
