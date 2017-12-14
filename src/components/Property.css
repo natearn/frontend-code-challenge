@@ -38,8 +38,10 @@
 	margin-top: 0;
 }
 
-.property > :last-child > :first-child {
+.property > :last-child > :nth-child(2) {
 	flex: 1;
+	font-size: small;
+	color: grey;
 }
 
 .property > :last-child > :last-child {
