@@ -6,7 +6,7 @@
 ul.app {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: center;
 	margin: 0;
 	padding: 0;
 }
